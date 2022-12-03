@@ -1,0 +1,44 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container mx-auto flex justify-start items-center h-10 mt-1 rounded-lg px-4 py-1 bg-gray-800 text-white text-xs">
+    <ul class="flex justify-start items-center">
+        <li class="flex">
+            <a href="/" class="font-bold flex justify-start items-center">
+                <svg class="w-4 h-4 mr-2" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m1.5 10.5 9-9 9 9"/><path d="M3.5 8.5v8a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-8"/></g></svg>
+                Home
+            </a>
+        </li>
+        <li class="flex ml-6">
+            <a href="referencecs/web" class="font-bold flex justify-start items-center">
+                <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.5"/><path d="M6 8h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>               
+                Développeur web et web mobile
+            </a>
+        </li>
+        <li class="flex ml-6">
+            <a href="referencecs/concept" class="font-bold flex justify-start items-center"  id="profile-tab">
+                <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.5"/><path d="M11.667 9 10 12h4l-1.667 3M6 8h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>                
+                Concepteur⋅rice développeur⋅se d'applications
+            </a>
+        </li>
+        <li class="flex ml-6">
+            <a href="referencecs/transversale" class="font-bold flex justify-start items-center">
+                <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 3A3.25 3.25 0 0 1 22 6.25v11.5A3.25 3.25 0 0 1 18.75 21H5.25A3.25 3.25 0 0 1 2 17.75V6.25A3.25 3.25 0 0 1 5.25 3h13.5Zm0 1.5H5.25A1.75 1.75 0 0 0 3.5 6.25v11.5c0 .966.784 1.75 1.75 1.75h13.5a1.75 1.75 0 0 0 1.75-1.75V6.25a1.75 1.75 0 0 0-1.75-1.75Zm-12.002 2h10.506a.75.75 0 0 1 .102 1.493L17.254 8H6.748a.75.75 0 0 1-.101-1.493l.101-.007h10.506H6.748Z" fill="white"/></svg>               
+                Compétences transversales
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- view all  skills  -->
+<div class="py-4">
+    <div class="container mx-auto flex justify-between items-center border p-4 rounded-lg shadow-lg">
+        <div *ngFor="let image of images" class="w-auto flex flex-col justify-center items-center">
+            <img class="mr-2 w-8 h-8 rounded-full border-1 border-white" src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc=">
+            <div class="flex flex-col justify-start items-center mt-4">
+                <div *ngFor="let skill of skills" class="flex flex-col justify-start items-center border p-1 rounded-lg my-1 border-gray-100 shadow-sm">
+                    <button class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                    <button class="ml-1 text-left bg-green-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                    <button class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mr-2"> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

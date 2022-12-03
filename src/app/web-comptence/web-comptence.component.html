@@ -1,0 +1,29 @@
+<div class="container mx-auto py-6 grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-10">
+    <!-- loop cards -->
+    <div *ngFor="let comptence of comptences; let index = index " class="mx-auto py-2 w-52">
+        <div class="bg-white relative z-50 flex flex-col justify-center items-center mx-auto -mb-6 w-14 h-14 border-4 border-gray-100 rounded-full">
+            <span class="font-extrabold text-3xl">{{index+1}}</span>
+        </div>
+        <div class="comptence-card rounded-lg pt-10 flex flex-col items-center justify-center border border-gray-200 pb-4">
+            <div class="w-full flex justify-center items-center">
+                <button class="text-left bg-red-500 w-28 h-6 rounded-lg mb-1 mr-2">
+                    <span class="bg-white rounded-full ml-1 text-xs px-1">1</span>
+                </button>
+                <svg fill="green" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.294 16.998c-.435 0-.847-.203-1.111-.553L3.61 11.724a1.392 1.392 0 0 1 .27-1.951 1.392 1.392 0 0 1 1.953.27l2.351 3.104 5.911-9.492a1.396 1.396 0 0 1 1.921-.445c.653.406.854 1.266.446 1.92L9.478 16.34a1.39 1.39 0 0 1-1.12.656c-.022.002-.042.002-.064.002z"/></svg>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <button class="text-left bg-green-500 w-28 h-6 rounded-lg mb-1 mr-2">
+                    <span class="bg-white rounded-full ml-1 text-xs px-1">2</span>
+                </button>
+                <svg fill="none" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.294 16.998c-.435 0-.847-.203-1.111-.553L3.61 11.724a1.392 1.392 0 0 1 .27-1.951 1.392 1.392 0 0 1 1.953.27l2.351 3.104 5.911-9.492a1.396 1.396 0 0 1 1.921-.445c.653.406.854 1.266.446 1.92L9.478 16.34a1.39 1.39 0 0 1-1.12.656c-.022.002-.042.002-.064.002z"/></svg>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <button class="text-left bg-yellow-500 w-28 h-6 rounded-lg mb-1 mr-2">
+                    <span class="bg-white rounded-full ml-1 text-xs px-1">3</span>
+                </button>
+                <svg fill="none" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.294 16.998c-.435 0-.847-.203-1.111-.553L3.61 11.724a1.392 1.392 0 0 1 .27-1.951 1.392 1.392 0 0 1 1.953.27l2.351 3.104 5.911-9.492a1.396 1.396 0 0 1 1.921-.445c.653.406.854 1.266.446 1.92L9.478 16.34a1.39 1.39 0 0 1-1.12.656c-.022.002-.042.002-.064.002z"/></svg>
+            </div>
+        </div>
+    </div>
+    <!-- end cards -->
+</div>
