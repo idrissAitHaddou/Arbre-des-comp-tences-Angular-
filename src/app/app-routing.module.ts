@@ -1,36 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConceptReferencesComponent } from './concept-references/concept-references.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SkillsComponent } from './skills/skills.component';
-import { TransversaleReferencesComponent } from './transversale-references/transversale-references.component';
-import { WebReferencesComponent } from './web-references/web-references.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { ConceptComponent } from './components/references/concept/concept.component';
+import { TransversaleComponent } from './components/references/transversale/transversale.component';
+import { WebComponent } from './components/references/web/web.component';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
-  },
-  {
-    path: "skills",
-    component: SkillsComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "login",
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
-    path: "referencecs/web",
-    component: WebReferencesComponent
+    path: "web",
+    component: WebComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: "referencecs/concept",
-    component: ConceptReferencesComponent
+    path: "concept",
+    component: ConceptComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: "referencecs/transversale",
-    component: TransversaleReferencesComponent
+    path: "transversale",
+    component: TransversaleComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

@@ -3,34 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SkillsComponent } from './skills/skills.component';
-import { WebComptenceComponent } from './web-comptence/web-comptence.component';
-import { ConceptComptenceComponent } from './concept-comptence/concept-comptence.component';
-import { TransverComptenceComponent } from './transver-comptence/transver-comptence.component';
-import { LoginComponent } from './login/login.component';
-import { WebReferencesComponent } from './web-references/web-references.component';
-import { ConceptReferencesComponent } from './concept-references/concept-references.component';
-import { TransversaleReferencesComponent } from './transversale-references/transversale-references.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { WebComponent } from './components/references/web/web.component';
+import { ConceptComponent } from './components/references/concept/concept.component';
+import { TransversaleComponent } from './components/references/transversale/transversale.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HeroComponent } from './components/shared/hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    SkillsComponent,
-    WebComptenceComponent,
-    ConceptComptenceComponent,
-    TransverComptenceComponent,
     LoginComponent,
-    WebReferencesComponent,
-    ConceptReferencesComponent,
-    TransversaleReferencesComponent,
+    NavbarComponent,
+    HomeComponent,
+    WebComponent,
+    ConceptComponent,
+    TransversaleComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
