@@ -1,9 +1,12 @@
-export interface User {
-    id:number ;
-    firstName: string ;  
-    lastName: string;
-    image: string ;
-    email: string;
+export class User {
+    id:number = 0;
+    firstname: string = "";  
+    lastname: string = "";
+    image: string ="" ;
+    email?: string =  "";
+    classroom?: string = "";
+    promotion?: string = "";
+    level?: string = "";
 }
 
 export interface Image {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/intefraces/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,156 +8,18 @@ import { User } from 'src/app/intefraces/user';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  cards:Array<User> = new Array<User>();
-  constructor() { }
+  users:Array<User> = new Array<User>();
+  constructor(private userService: UserService) { 
+  }
 
   ngOnInit(): any {
-    this.getCards();
+    this.getAllUsers();
   }
   // get all cards
-  getCards() {
-     this.cards = [
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@aliaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'ahmed',
-        lastName : 'ait ahmed',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-      {
-        id: 1,
-        firstName : 'idriss',
-        lastName : 'ait haddou',
-        image : 'idrissaithadou',
-        email : '@idrissaithadou',
-      },
-    ]
+  getAllUsers() {
+      this.userService.getUsers().subscribe((users: Array<User>) => {
+            this.users = users;
+      })
   }
 
 }

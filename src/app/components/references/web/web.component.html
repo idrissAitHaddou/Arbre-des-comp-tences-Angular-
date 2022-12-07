@@ -2,14 +2,45 @@
 <app-hero></app-hero>
 <!-- view all  skills  -->
 <div class="py-4">
-    <div class="container mx-auto flex justify-between items-center border p-4 rounded-lg shadow-lg">
-        <div *ngFor="let image of images" class="w-auto flex flex-col justify-center items-center">
-            <img class="mr-2 w-8 h-8 rounded-full border-1 border-white" src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc=">
+    <div class="container mx-auto flex justify-start items-center gap-4 py-4 px-2">
+        <div class="flex items-center">
+            <span class="text-xs font-bold text-gray-600 mr-2"> Level 1</span>
+            <button class="text-left bg-red-500 w-8 h-4 rounded-lg mr-2"> </button>
+        </div>
+        <div class="flex items-center">
+            <span class="text-xs font-bold text-gray-600 mr-2"> Level 2</span>
+            <button class="text-left bg-green-500 w-8 h-4 rounded-lg mr-2"> </button>
+        </div>
+        <div class="flex items-center">
+            <span class="text-xs font-bold text-gray-600 mr-2"> Level 3</span>
+            <button class="text-left bg-yellow-500 w-8 h-4 rounded-lg mr-2"> </button>
+        </div>
+    </div>
+    <div class="container mx-auto flex justify-start items-center border p-4 rounded-lg shadow-lg gap-2">
+        <div *ngFor="let skill of skills; let index = index" class="w-auto flex flex-col justify-center items-center">
+            <img hidden [src]="getImage(index, skill[0][1])" class="mr-2 w-8 h-8 rounded-full border-1 border-white">
+            <span class="text-xs mb-2">@{{images[index][0].substring(0,5)}}...</span>
+            <img [src]="images[index][1]" class="mr-2 w-8 h-8 rounded-full border-1 border-white">
             <div class="flex flex-col justify-start items-center mt-4">
-                <div *ngFor="let skill of skills" class="flex flex-col justify-start items-center border p-1 rounded-lg my-1 border-gray-100 shadow-sm">
-                    <button class="ml-1 text-left bg-red-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
-                    <button class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
-                    <button class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mr-2"> </button>
+                <div *ngFor="let userSkills of skill"  class="flex flex-col justify-start items-center border p-1 rounded-lg my-1 border-gray-100 shadow-sm">
+                        
+                        <span class="border border-gray-200 text-gray-600 rounded-full bg-white mb-1">{{userSkills[6]}}</span>
+
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[2] == 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[2], 'n1')" class="ml-1 text-left bg-red-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[2] != 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[2], 'n1')" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[2] == 'true'" class="ml-1 text-left bg-red-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[2] != 'true'" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[3] == 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[3], 'n2')" class="ml-1 text-left bg-green-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[3] != 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[3], 'n2')" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[3] == 'true'" class="ml-1 text-left bg-green-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[3] != 'true'" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[4] == 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[4], 'n3')" class="ml-1 text-left bg-yellow-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] == 'idrissaithadou@gmail.com' && userSkills[4] != 'true'" (click)="chnageStatusSkills(userSkills[0], userSkills[4], 'n3')" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[4] == 'true'" class="ml-1 text-left bg-yellow-500 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+                        <button *ngIf="images[index][0] != 'idrissaithadou@gmail.com' && userSkills[4] != 'true'" class="ml-1 text-left bg-gray-200 w-8 h-4 rounded-lg mb-1 mr-2"> </button>
+
                 </div>
             </div>
         </div>

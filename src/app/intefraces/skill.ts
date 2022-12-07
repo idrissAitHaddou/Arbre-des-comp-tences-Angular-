@@ -1,3 +1,4 @@
-export interface Skill {
-    id: number;
+export class Skill {
+    
 }
+

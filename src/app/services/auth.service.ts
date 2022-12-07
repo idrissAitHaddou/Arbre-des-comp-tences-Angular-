@@ -7,10 +7,10 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  connected: boolean = false;
+  _authenticated: boolean = false;
   email: string | null = "";
   constructor(private _http:HttpClient, private router:Router) {
-    this.connected = localStorage.getItem("connected") == "true" ? true : false;
+    this._authenticated = localStorage.getItem("connected") == "true" ? true : false;
     this.email = localStorage.getItem("email") != null ? localStorage.getItem("email")  : "";
    }
 
@@ -28,7 +28,7 @@ export class AuthService {
       this._http.post<any>(environment.baseUrl + "/api/user/login",{"email": email,"password": password}).subscribe((response: any) => {
         if(response.status == 200) {
           this.setToken(email)
-          this.connected = localStorage.getItem("connected") == "true" ? true : false;
+          this._authenticated = localStorage.getItem("connected") == "true" ? true : false;
           this.router.navigate(["/"])
           window.location.reload();
           return true
@@ -41,6 +41,10 @@ export class AuthService {
       localStorage.removeItem("connected")
       localStorage.removeItem("email")
       this.router.navigate(["/login"])
+  }
+
+  getCurrentUser():any{
+   return this._http.get<any>(environment.baseUrl + `/api/user/detaills?email=${this.email}`)
   }
 
 }
